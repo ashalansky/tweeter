@@ -1,16 +1,14 @@
 $(document).ready(function() {
-  $("textarea").keydown(updateCount);
+  $("textarea").keydown(function() {
+    const maxLength = 140;
+    let length =  $(this).val().length;
+    length = maxLength - length;
+    $(".counter").text(length);
   
-  function updateCount() {
-    let charLength = 140 - $(this).val().length; //max length
-    if (this.value.length >= 140) ;
-    $(".counter").text(charLength);
+  if ($(this).val().length > maxLength - 1) {
+    $(".counter").addClass("red");
+  } else if ($(this).val().length < maxLength) {
+    $(".counter").removeClass("red");
   }
+  });
 });
-
-// $('#customText').on('keyup', function(event) {
-//   var len = $(this).val().length;
-//   if (len >= 40) {
-//      $(this).val($(this).val().substring(0, len-1));
-//   }
-// });
