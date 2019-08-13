@@ -16,12 +16,17 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  color: #424c6d;
+  background-color: #f7f6ee;
+  font-size: 25px;
   margin: auto;
+  font-family:'Source Sans Pro', sans-serif;
 }
-
+main {
+  width: 90%;
+  margin: auto;
+  background-color:#f7f6ee;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

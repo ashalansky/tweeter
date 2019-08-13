@@ -4,7 +4,7 @@ header {
   z-index: auto;
   text-align: center;
   margin-top: 120px;
-  background-color: #fb836b;
+  background-color: #fada95;
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
 
@@ -13,6 +13,6 @@ header {
 }
 
 h2 {
-  color: #7f6698;
+  color: #424c6d;
   font-weight: normal;
 }
