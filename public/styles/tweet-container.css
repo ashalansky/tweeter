@@ -1,17 +1,24 @@
-.tweet-wrapper {
+#tweet-wrapper {
   display: block;
   font-weight: normal;
-  border: 2px solid #2a90ab;
+  /* border: 2px solid #2a90ab; */
   justify-content: center;
   position: relative;
   margin: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  transition: box-shadow .4s;
 }
-.tweet-wrapper:hover {
-box-shadow: 0 0 11px #2a90ab;
+
+
+.tweet {
+  border: 2px solid #2a90ab;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow .3s;
 }
+.tweet:hover {
+  box-shadow: 0 0 11px #2a90ab;
+  }
 
 .fa-user {
   padding: 10px;
@@ -30,7 +37,7 @@ h3 {
   opacity: 0.5;
 }
 
-.tweet-msg {
+#tweet-wrapper p {
   margin: 10px 0;
   display: flex;
   flex-direction: column;
@@ -44,7 +51,7 @@ h3 {
   padding-left: 15px;
 }
 
-.tweet-footer {
+#tweet-wrapper footer {
   display: block;
   font-size: 20px;
   padding: 5px 15px 7px 15px;
@@ -54,4 +61,8 @@ h3 {
 .footer-icons {
   float: right;
   padding: 5px;
+  transition: font-weight .3s;
+}
+.footer-icons:hover {
+  font-weight: bold; 
 }
