@@ -63,7 +63,7 @@ const data = [{
   }
 ]
 
-
+// CREATE TWEET ELEMENT
 const createTweetElement = function (tweet) {
   const currentDate = new Date();
   const markup = $(`
@@ -81,15 +81,25 @@ const createTweetElement = function (tweet) {
   return markup;
 };
 
+
+// LOAD TWEETS
+const loadTweets = function () {
+  $.get('/tweets').then((result) => {
+    renderTweets(result, false);
+  });
+};
+
+// RENDER TWEET ELEMENT
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
     $("#tweet-wrapper").append(createTweetElement(tweet));
   }
 };
-
+// DOCUMENT READY
 $(document).ready(function () {
   renderTweets(data);
-  
+  loadTweets();
+
   const $form = $('#form')
   $form.on('submit', function (event) {
     event.preventDefault(); //prevent default action 
@@ -104,7 +114,8 @@ $(document).ready(function () {
       data: data
     }).then(function (morePostsHtml) {
       console.log('Success', data)
-      $form.replaceWith(morePostsHtml);
+      $('#tweet-wrapper').append(morePostsHtml);
+      $(".msg").val(""); //get rid of text once submitted
     });
   });
 });
