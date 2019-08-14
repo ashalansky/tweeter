@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("textarea").keydown(function() {
+  $(".msg").keydown(function() {
     const maxLength = 140;
     let length =  $(this).val().length;
     length = maxLength - length;

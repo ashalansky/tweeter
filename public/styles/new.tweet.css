@@ -1,9 +1,7 @@
-
-
 .container {
   position: absolute;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   justify-content: center;
 }
 
@@ -20,7 +18,6 @@ h2 {
 }
 
 .msg {
-  margin: 10px 0;
   display: flex;
   flex-direction: column;
   background: transparent;
@@ -28,25 +25,28 @@ h2 {
   border-bottom: 2px solid #9fdded;
   width: 100%;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
+  text-align: left;
 }
+
 .btn {
-background: #2a90ab;
-color: white;
-text-align: center;
-padding: 5px;
-border-radius: 5px;
-font-family: 'Bungee', cursive;
-width: 70px;
-height: 30px;
-font-size: 15px;
+  background: #2a90ab;
+  border-color: #2a90ab;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Bungee', cursive;
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .counter {
-float: right;
-position: relative;
-color: #2a90ab;
-font-weight: bold;
+  float: right;
+  position: relative;
+  color: #2a90ab;
+  font-weight: bold;
 }
 
 .red {
