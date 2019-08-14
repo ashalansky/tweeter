@@ -49,6 +49,7 @@ h3 {
   font-size: 20px;
   padding-bottom: 10px;
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 #tweet-wrapper footer {
@@ -61,8 +62,4 @@ h3 {
 .footer-icons {
   float: right;
   padding: 5px;
-  transition: font-weight .3s;
-}
-.footer-icons:hover {
-  font-weight: bold; 
 }

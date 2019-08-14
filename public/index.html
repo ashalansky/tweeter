@@ -50,10 +50,10 @@
   <main class="container">
     <section class="comp-container">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="http://localhost:8080/tweets">
+      <form id="form" method="POST" action="/tweets">
         <label for="tweet-message"></label>
-        <textarea class="msg" name="message" placeholder="What are you humming about?"></textarea>
-        <input class="btn" type="submit" value="Tweet">
+        <textarea class="msg" name="text" placeholder="What are you humming about?"></textarea>
+        <input class="btn-submit" type="submit" value="Tweet">
         <span class="counter">140</span>
       </form>
     </section>
