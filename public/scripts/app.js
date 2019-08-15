@@ -98,7 +98,7 @@ const renderTweets = function (tweets) {
 // DOCUMENT READY
 $(document).ready(function () {
   renderTweets(data);
-  loadTweets();
+  
 
   const $form = $('#form')
   $form.on('submit', function (event) {
@@ -114,6 +114,7 @@ $(document).ready(function () {
       data: data
     }).then(function (morePostsHtml) {
       console.log('Success', data)
+      loadTweets();
       $('#tweet-wrapper').append(morePostsHtml);
       $(".msg").val(""); //get rid of text once submitted
     });
