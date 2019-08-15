@@ -4,6 +4,19 @@
   padding: 5px;
   justify-content: center;
 }
+#error1 {
+border-style: solid;
+border-color: red;
+padding: 5px;
+color: red;
+}
+
+#error2 {
+  border-style: solid;
+  border-color: red;
+  padding: 5px;
+  color: red;
+  }
 
 h2 {
   position: relative;

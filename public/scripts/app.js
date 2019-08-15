@@ -90,7 +90,7 @@ const createTweetElement = function (tweet) {
 
 // LOAD TWEETS
 const loadTweets = function () {
-  $.get('/tweets').then((result) => {
+  return $.get('/tweets').then((result) => {
     renderTweets(result, false);
   });
 };
@@ -103,58 +103,64 @@ const renderTweets = function (tweets) {
 };
 // DOCUMENT READY
 $(document).ready(function () {
-renderTweets(data);
+  renderTweets(data);
 
-const $form = $('#form')
+  const $form = $('#form')
 
-$form.on('submit', function (event) {
-event.preventDefault(); //prevent default action 
-let url = $(this).attr("action"); //get form action url
-let type = $(this).attr("method"); //get form GET/POST method
-let data = $(this).serialize(); //Encode form elements for submission 
-
-const msgArea = data.substring(5)
-if (msgArea === "") {
-  alert("Please make a tweet!")
-  console.log("nfjdsnf")
-}
-if (msgArea.length > 140) {
-  alert("Tweet too long!")
-}
-$.ajax({
-    url: url,
-    type: type,
-    data: data
-  })
-  .then(function (morePostsHtml) {
-    console.log('Success', data)
-    loadTweets();
-    $('#tweet-wrapper').append(morePostsHtml);
-    $(".msg").val(""); //get rid of text once submitted
-  })
-
-});
+  $form.on('submit', function (event) {
+    event.preventDefault(); //prevent default action 
+    const url = $(this).attr("action"); //get form action url
+    const type = $(this).attr("method"); //get form GET/POST method
+    const data = $(this).serialize(); //Encode form elements for submission 
 
 
-$(".comp-container").hide();
-
-$("#nav-arrow").on("click", function() {
-  $(".comp-container").slideToggle("complete", function() {
-    $(".comp-container").focus();
+    const msgArea = data.substring(5)
+    if (msgArea === "" || msgArea === null) {
+      $("#error1").slideDown(200).delay(2000).fadeOut(400);
+    }
+    if (msgArea.length > 140) {
+      $("#error2").slideDown(200).then(function() {
+        return $(this).delay(2000).then(function() {
+          return $(this).fadeOut(400);
+        })
+      });
+    }
+    $.ajax({
+        url: url,
+        type: type,
+        data: data
+      })
+      .then(function (morePostsHtml) {
+        console.log('Success', data)
+        loadTweets();
+        $('#tweet-wrapper').append(morePostsHtml);
+        $(".msg").val(""); //get rid of text once submitted
+      })
   });
-})
-// w3schools + https://paulund.co.uk/how-to-create-an-animated-scroll-to-top-button-with-jquery
-$(window).scroll(function(){  
-  if ($(this).scrollTop() > 20){
-    $('#topbutton').fadeIn();
-  } else {
-    $('#topbutton').fadeOut();
-  }
+
+
+  $(".comp-container").hide();
+
+  $("#nav-arrow").on("click", function () {
+    $(".comp-container").slideToggle("complete", function () {
+      $(".comp-container").focus();
+    });
+  })
+  // w3schools + https://paulund.co.uk/how-to-create-an-animated-scroll-to-top-button-with-jquery
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 150) {
+      $('#topbutton').fadeIn();
+    } else {
+      $('#topbutton').fadeOut();
+    }
+  });
+
+  $('#topbutton').click(function () {
+    window.scrollTo(0, 0);
+  })
+
+  $("#error1").hide();
+  $("#error2").hide();
+
+
 });
-
-$('#topbutton').click(function(){
-  window.scrollTo(0, 0);
-})
-
-});
-

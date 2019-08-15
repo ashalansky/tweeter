@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
 
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700&display=swap"/>
+    href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700&display=swap" />
   <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.10.1/css/all.css> <!-- App CSS -->
   <link rel="stylesheet" href="styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="styles/header.css" type="text/css" />
   <link rel="stylesheet" href="styles/new.tweet.css" type="text/css" />
   <link rel="stylesheet" href="styles/tweet-container.css" type="text/css" />
-  
+
   <!-- External JS -->
   <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
@@ -48,10 +48,16 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="comp-container">
+      <span id="error1" class="error">
+        <p>Oops! You made a boo boo. Please compose a tweet before pressing submit <i
+            class="fas fa-exclamation-triangle"></i></p>
+      </span>
+      <span id="error2" class="error">
+        <p>Oops! You made a boo boo.Tweet exceeds character limit <i class="fas fa-exclamation-triangle"></i></p>
+      </span>
       <h2>Compose Tweet</h2>
       <form id="form" method="POST" action="/tweets">
-        <label for="tweet-message"></label>
-        <textarea autofocus class="msg" name="text" placeholder="What are you humming about?"></textarea>
+        <label for="tweet-message"><textarea autofocus class="msg" name="text" placeholder="What are you humming about?"></textarea></label>
         <input class="btn-submit" type="submit" value="Tweet">
         <span class="counter">140</span>
       </form>
@@ -63,12 +69,15 @@
         <h3 class="handle">@ashalansky</h3>
         <p>I've been thinking about it and I've realized it is in my financial best interest to pass away. lol.</p>
         <footer>10 days ago
-          <div class="footer-icons"> <i class="far fa-heart"></i> <i class="far fa-comment-alt">
-          </i> <i class="fas fa-retweet"></i> </div>
+          <div class="footer-icons"> 
+            <i class="far fa-heart"></i> 
+            <i class="far fa-comment-alt"></i> 
+            <i class="fas fa-retweet"></i> 
+          </div>
         </footer>
       </article>
     </section>
-    <i id="topbutton" class="fas fa-chevron-circle-up fa-2x"></i>
+    <button><i id="topbutton" class="fas fa-chevron-circle-up fa-2x"></i></button>
   </main>
 </body>
 

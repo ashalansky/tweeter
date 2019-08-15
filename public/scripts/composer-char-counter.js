@@ -7,7 +7,6 @@ $(document).ready(function() {
   
   if ($(this).val().length > maxLength - 1) {
     $(".counter").addClass("red"); {
-      alert("Too many characters!");
     }
   } else if ($(this).val().length < maxLength) {
     $(".counter").removeClass("red");
