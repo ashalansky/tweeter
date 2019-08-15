@@ -26,13 +26,19 @@ nav {
   padding: 1.5em;
   
 }
-.arrow {
+#nav-arrow {
   position: absolute;
-  top: .8em;
+  top: .77em;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
   color: white;
+  cursor: pointer;
 }
+
+#nav-arrow:hover {
+  padding-top: 4px;
+}
+
 
 

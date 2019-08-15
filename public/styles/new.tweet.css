@@ -7,6 +7,7 @@
 
 h2 {
   position: relative;
+  margin-top: 15px;
 }
 
 .new-text {
@@ -46,6 +47,11 @@ box-shadow: none;
   width: 70px;
   height: 30px;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 0 5px #2a90ab;
 }
 
 .counter {

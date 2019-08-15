@@ -37,6 +37,11 @@ h3 {
   opacity: 0.5;
 }
 
+.handle:hover {
+  box-shadow: 0 0 10px #2a90ab;
+  cursor: pointer;
+}
+
 #tweet-wrapper p {
   margin: 10px 0;
   display: flex;
