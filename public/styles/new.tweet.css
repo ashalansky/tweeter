@@ -5,10 +5,10 @@
   justify-content: center;
 }
 #error1 {
-border-style: solid;
-border-color: red;
-padding: 5px;
-color: red;
+  border-style: solid;
+  border-color: red;
+  padding: 5px;
+  color: red;
 }
 
 #error2 {
@@ -78,3 +78,4 @@ box-shadow: none;
 .red {
   color: red;
 }
+

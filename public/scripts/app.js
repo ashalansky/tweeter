@@ -144,6 +144,8 @@ $(document).ready(function () {
   $("#nav-arrow").on("click", function () {
     $(".comp-container").slideToggle("complete", function () {
       $(".comp-container").focus();
+
+      $(".msg").focus();
     });
   })
   // w3schools + https://paulund.co.uk/how-to-create-an-animated-scroll-to-top-button-with-jquery

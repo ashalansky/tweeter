@@ -41,4 +41,8 @@ nav {
 }
 
 
-
+@media only screen and (max-width: 414px) {
+  .new-tweet-nav {
+    display: none;
+  }
+}

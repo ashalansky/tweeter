@@ -23,7 +23,7 @@ body {
   font-family:'Source Sans Pro', sans-serif;
 }
 main {
-  width: 90%;
+  width: 90vw;
   margin: auto;
   background-color:#f7f6ee;
 }
@@ -44,3 +44,6 @@ padding-bottom: 1px
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ 
+
