@@ -31,15 +31,19 @@ h3 {
 }
 
 .handle {
+  border: none;
+  background: none;
   float: right;
   margin-right: 15px;
   font-size: 20px;
   opacity: 0.5;
+  
 }
 
 .handle:hover {
-  box-shadow: 0 0 10px #2a90ab;
+  text-shadow: 0 0 10px #2a90ab;
   cursor: pointer;
+  font-weight: bold;
 }
 
 #tweet-wrapper p {
@@ -67,4 +71,18 @@ h3 {
 .footer-icons {
   float: right;
   padding: 5px;
+}
+#heart-icon:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px #2a90ab;
+}
+
+#comment-icon:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px #2a90ab;
+}
+
+#retweet-icon:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px #2a90ab;
 }
