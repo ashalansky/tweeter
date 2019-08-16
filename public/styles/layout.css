@@ -7,7 +7,10 @@ html {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -20,15 +23,22 @@ body {
   background-color: #f7f6ee;
   font-size: 25px;
   margin: auto;
-  font-family:'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
 main {
   width: 90vw;
   margin: auto;
-  background-color:#f7f6ee;
+  background-color: #f7f6ee;
+  /* position: sticky; */
+  padding: 5px;
+  /* justify-content: center; */
 }
 
+
 #topbutton {
+  justify-content: flex-end;
+  display: flex;
   z-index: 99;
   position: fixed;
   bottom: 0;
@@ -37,13 +47,21 @@ main {
   color: #2a90ab;
   cursor: pointer;
 }
-#topbutton:hover {
-padding-bottom: 1px
 
+#topbutton:hover {
+  padding-bottom: 1px
 }
-/*
+
+#flex-container {
+  display: flex;
+  flex: wrap;
+}
+
+@media only screen and (max-width: 1024px) {
+  #flex-container {
+    flex-wrap: wrap;
+  }
+
+  /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- 
-

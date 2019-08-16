@@ -9,6 +9,7 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-title {
   color: #9fdded;
   font-family: 'Bungee', cursive;
@@ -16,22 +17,24 @@ nav {
 }
 
 .cta-container {
-  position: relative;
-  display: incline-block;
+  float: right;
+  width: 260px;
+  height: 50px;
+  /* display: incline-block; */
 }
 
 .new-tweet-nav {
   color: #9fdded;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 1.5em;
-  
 }
+
 #nav-arrow {
-  position: absolute;
-  top: .77em;
+  position: relative;
+  /* top: 1.0em; */
   width: 100%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: white;
   cursor: pointer;
 }
@@ -41,8 +44,20 @@ nav {
 }
 
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 1024px) {
+
+  .cta-container {
+    margin-top: 50px;
+    width: 260px;
+    height: 60px
+  }
+
+  nav {
+    background-color: #fada95;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  }
+
   .new-tweet-nav {
-    display: none;
+    font-weight: bold;
   }
 }
