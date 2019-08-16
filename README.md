@@ -18,5 +18,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["screenshot of main page desktop version"](https://github.com/ashalansky/tweeter/blob/master/docs/Desktop%20version.png)
+!["screenshot of main page desktop version"](https://github.com/ashalansky/tweeter/blob/master/docs/Desktop-version.png)
+
 !["screenshot of main page tablet version"](https://github.com/ashalansky/tweeter/blob/master/docs/Tablet-View.png)
