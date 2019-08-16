@@ -118,8 +118,8 @@ $(document).ready(function() {
       .then(function() {
         loadTweets();
         console.log('Success', data);
-        // $('#tweet-wrapper').append(morePostsHtml);
-        $(".msg").val(""); //get rid of text once submitted
+        $(".comp-container").hide();
+        $(".msg").val("");
       });
   });
 
