@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+
+!["screenshot of main page desktop version"](https://github.com/ashalansky/tinyapp/blob/master/docs/urls_page.png)
+!["screenshot of main page tablet version"](https://github.com/ashalansky/tinyapp/blob/master/docs/login_page.png)
