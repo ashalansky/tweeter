@@ -4,7 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const timeDifference = function (current, previous) {
+
+const timeDifference = function(current, previous) {
   const msPerMinute = 60 * 1000;
   const msPerHour = msPerMinute * 60;
   const msPerDay = msPerHour * 24;
@@ -39,38 +40,17 @@ const timeDifference = function (current, previous) {
   }
 };
 
-const data = [{
-    "user": {
-      "name": "Ben",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirBen"
-    },
-    "content": {
-      "text": "Just found out that to get in a relationship I can't constantly isolate myself from everyone...lots to process."
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Susan",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@TheRealSusan"
-    },
-    "content": {
-      "text": "And in the end...the people you end up being closest to are the ones who send you memes while they're on the toilet."
-    },
-    "created_at": 1461113959088
-  }
-]
 
-const escape = function (str) {
+
+
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 // CREATE TWEET ELEMENT
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   const currentDate = new Date();
   const markup = $(`
     <article class="tweet">
@@ -79,8 +59,8 @@ const createTweetElement = function (tweet) {
           <h3 class="handle">${tweet.user.handle}</h3>
           <p>${tweet.content.text}</p>
           <footer>${timeDifference(currentDate, tweet.created_at)}
-          <div class="footer-icons"> <i class="far fa-heart"></i> <i class="far fa-comment-alt"></i> <i
-        class="fas fa-retweet"></i> </div>
+          <div class="footer-icons"> <i class="far fa-heart"></i> <i class="far fa-comment-alt"></i> 
+          <i class="fas fa-retweet"></i> </div>
       </footer>
     </article>`);
 
@@ -88,68 +68,71 @@ const createTweetElement = function (tweet) {
 };
 
 
+// RENDER TWEET ELEMENT
+const renderTweets = function(tweets) {
+  for (let tweet of tweets) {
+    $("#tweet-wrapper").prepend(createTweetElement(tweet));
+  }
+};
+
 // LOAD TWEETS
-const loadTweets = function () {
-  return $.get('/tweets').then((result) => {
-    renderTweets(result, false);
+const loadTweets = function() {
+  return $.ajax({
+    url: '/tweets/',
+    type: "GET",
+    success: function (data) {
+      $("#tweet-wrapper").empty();
+      //console.log(data);
+      renderTweets(data);
+    }
   });
 };
 
-// RENDER TWEET ELEMENT
-const renderTweets = function (tweets) {
-  for (let tweet of tweets) {
-    $("#tweet-wrapper").append(createTweetElement(tweet));
-  }
-};
 // DOCUMENT READY
-$(document).ready(function () {
-  renderTweets(data);
+$(document).ready(function() {
+  loadTweets();
 
-  const $form = $('#form')
+  const $form = $('#form');
+  $form.on('submit', function(event) {
+    const url = $(this).attr("action");
+    const type = $(this).attr("method");
+    event.preventDefault();
+    const data = $(this).serialize();
 
-  $form.on('submit', function (event) {
-    event.preventDefault(); //prevent default action 
-    const url = $(this).attr("action"); //get form action url
-    const type = $(this).attr("method"); //get form GET/POST method
-    const data = $(this).serialize(); //Encode form elements for submission 
-
-
-    const msgArea = data.substring(5)
+    const msgArea = data.substring(5);
     if (msgArea === "" || msgArea === null) {
       $("#error1").slideDown(200).delay(2000).fadeOut(400);
     }
     if (msgArea.length > 140) {
-      $("#error2").slideDown(200).then(function() {
+      $("#error2").slideDown(200).delay(2000).fadeOut(400)(function() {
         return $(this).delay(2000).then(function() {
           return $(this).fadeOut(400);
-        })
+        });
       });
     }
     $.ajax({
-        url: url,
-        type: type,
-        data: data
-      })
-      .then(function (morePostsHtml) {
-        console.log('Success', data)
+      url: url,
+      type: type,
+      data: data
+    })
+      .then(function() {
         loadTweets();
-        $('#tweet-wrapper').append(morePostsHtml);
+        console.log('Success', data);
+        // $('#tweet-wrapper').append(morePostsHtml);
         $(".msg").val(""); //get rid of text once submitted
-      })
+      });
   });
 
 
   $(".comp-container").hide();
-
-  $("#nav-arrow").on("click", function () {
-    $(".comp-container").slideToggle("complete", function () {
+  $("#nav-arrow").on("click", function() {
+    $(".comp-container").slideToggle("complete", function() {
       $(".comp-container").focus();
-
       $(".msg").focus();
     });
-  })
+  });
   // w3schools + https://paulund.co.uk/how-to-create-an-animated-scroll-to-top-button-with-jquery
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     if ($(this).scrollTop() > 150) {
       $('#topbutton').fadeIn();
     } else {
@@ -157,9 +140,9 @@ $(document).ready(function () {
     }
   });
 
-  $('#topbutton').click(function () {
+  $('#topbutton').click(function() {
     window.scrollTo(0, 0);
-  })
+  });
 
   $("#error1").hide();
   $("#error2").hide();
