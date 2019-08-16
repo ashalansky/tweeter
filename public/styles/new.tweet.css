@@ -1,9 +1,3 @@
-.container {
-  position: absolute;
-  width: 100%;
-  padding: 5px;
-  justify-content: center;
-}
 #error1 {
   border-style: solid;
   border-color: red;
@@ -16,7 +10,7 @@
   border-color: red;
   padding: 5px;
   color: red;
-  }
+}
 
 h2 {
   position: relative;
@@ -46,8 +40,9 @@ h2 {
   padding-right: 15px;
   word-wrap: break-word;
 }
+
 .msg textarea:focus {
-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn-submit {
@@ -79,3 +74,8 @@ box-shadow: none;
   color: red;
 }
 
+@media only screen and (min-width: 1024px) {
+  .container {
+    margin-top: 130px;
+  }
+}

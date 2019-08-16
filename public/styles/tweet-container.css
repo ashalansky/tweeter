@@ -16,9 +16,10 @@
   margin-bottom: 20px;
   transition: box-shadow .3s;
 }
+
 .tweet:hover {
   box-shadow: 0 0 11px #2a90ab;
-  }
+}
 
 .fa-user {
   padding: 10px;
@@ -37,7 +38,7 @@ h3 {
   margin-right: 15px;
   font-size: 20px;
   opacity: 0.5;
-  
+
 }
 
 .handle:hover {
@@ -68,10 +69,12 @@ h3 {
   width: 100%;
   align-items: center;
 }
+
 .footer-icons {
   float: right;
   padding: 5px;
 }
+
 #heart-icon:hover {
   cursor: pointer;
   text-shadow: 0 0 10px #2a90ab;
@@ -86,4 +89,3 @@ h3 {
   cursor: pointer;
   text-shadow: 0 0 10px #2a90ab;
 }
-
