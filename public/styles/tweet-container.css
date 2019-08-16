@@ -18,7 +18,7 @@
 }
 
 .tweet:hover {
-  box-shadow: 0 0 11px #2a90ab;
+  box-shadow: 5px 5px 2px 2px #2a90ab;
 }
 
 .fa-user {
